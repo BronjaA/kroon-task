@@ -1,6 +1,7 @@
 import "./gists-list.scss";
 import { useState, useEffect } from "react";
 import api from "../../api/gists";
+import GistListItem from "../gistListItem/GistListItem";
 
 const GistsList = () => {
   const [gists, setGists] = useState([]);
@@ -23,7 +24,17 @@ const GistsList = () => {
 
   return (
     <div>
-      <p>gists list</p>
+      {!isLoading && (
+        <ul id="gist-list">
+          {gists.map((gist) => (
+            <GistListItem
+              key={gist.id}
+              imageUrl={gist.owner.avatar_url}
+              fileName={Object.values(gist.files)[0].filename}
+            />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
