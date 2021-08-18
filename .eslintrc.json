@@ -12,5 +12,17 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": "off",
+    "arrow-body-style": "off",
+    "camelcase": "off",
+    "no-unused-vars": "warn",
+    "react/prop-types": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "react/no-this-in-sfc": "off",
+    "no-plusplus": "off",
+    "no-console": "off"
+  }
 }
