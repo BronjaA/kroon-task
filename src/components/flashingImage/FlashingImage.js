@@ -14,7 +14,7 @@ const FlashingImage = ({ imageToFlash, setImageToFlash }) => {
         setIsFlashing(false);
         flashingContainer.current.addEventListener("transitionend", function handler() {
           setImageToFlash("");
-          this.removeEventListener("transitionedn", handler);
+          this.removeEventListener("transitionend", handler);
         });
       }, 1000);
     }

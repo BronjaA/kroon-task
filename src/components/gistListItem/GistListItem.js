@@ -11,7 +11,7 @@ const GistListItem = ({ imageUrl, fileName, flashImage }) => {
   };
 
   return (
-    <li onClick={togglePressedState} className={`${isPressed && "pressed"}`}>
+    <li onClick={togglePressedState} className={isPressed ? "pressed" : undefined}>
       <img src={imageUrl} alt="Profile" />
       <p>{fileName}</p>
     </li>
