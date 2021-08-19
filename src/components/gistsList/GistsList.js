@@ -2,6 +2,7 @@ import "./gists-list.scss";
 import { useState, useEffect } from "react";
 import api from "../../api/gists";
 import GistListItem from "../gistListItem/GistListItem";
+import LoadingIndicator from "../loadingIndicator/LoadingIndicator";
 
 const GistsList = () => {
   const [gists, setGists] = useState([]);
@@ -24,7 +25,7 @@ const GistsList = () => {
 
   return (
     <div>
-      {!isLoading && (
+      {!isLoading ? (
         <ul id="gist-list">
           {gists.map((gist) => (
             <GistListItem
@@ -34,6 +35,11 @@ const GistsList = () => {
             />
           ))}
         </ul>
+      ) : (
+        <div id="loading-screen">
+          <LoadingIndicator />
+          <p>Loading...</p>
+        </div>
       )}
     </div>
   );
