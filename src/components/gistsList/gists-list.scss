@@ -1,4 +1,11 @@
-#gist-list {
+#container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-bottom: 3rem;
+}
+
+#gists-list {
   margin: 0;
   padding: 0;
 }
